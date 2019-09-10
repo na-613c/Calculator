@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/keyboard">
+
+        <TableRow
+            android:id="@+id/tableRow11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/scoreboard"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#005F5555"
+                android:gravity="bottom|end"
+                android:textSize="24sp"
+                tools:text="sdgsdgsd"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#005F5555"
+                android:gravity="bottom|end"
+                android:scrollbars="horizontal"
+                android:textSize="24sp"
+                tools:text="sdgdsgsd"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonOpenBracket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="("
+                android:background="#33000000"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonCloseBracket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=")"
+                android:background="#33000000"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonRoot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="√"
+                android:background="#33000000"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonSquare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" x^2 "
+                android:background="#33000000"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonExponent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="^"
+                android:background="#33000000"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/number7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#771F1B1B"
+                android:text="7"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/number8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="8"
+                android:background="#771F1B1B"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/number9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="9"
+                android:background="#771F1B1B"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonDivision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#33000000"
+                android:text=" / "
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonSin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="sin"
+                android:background="#33000000"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/number4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4"
+                android:background="#771F1B1B"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/number5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5"
+                android:background="#771F1B1B"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/number6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="6"
+                android:background="#771F1B1B"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonMultiplication"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" * "
+                android:background="#33000000"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonCos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="cos"
+                android:background="#33000000"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/number1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1"
+                android:background="#771F1B1B"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/number2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2"
+                android:background="#771F1B1B"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/number3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3"
+                android:background="#771F1B1B"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonSubtraction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" - "
+                android:background="#33000000"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonDel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#FF9800"
+                android:text="del"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/number0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:background="#771F1B1B"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/numberPower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="."
+                android:background="#33000000"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonCalculation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#BF0051FC"
+                android:text="="
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonSummation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" + "
+                android:background="#33000000"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonCleaning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#FF5722"
+                android:text="С"
+                tools:layout_conversion_absoluteHeight="122dp"
+                tools:layout_conversion_absoluteWidth="0dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="61dp" />
+        </TableRow>
+
+    </TableLayout>
+
+</RelativeLayout>
