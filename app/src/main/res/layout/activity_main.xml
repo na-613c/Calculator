@@ -26,9 +26,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#005F5555"
-                android:gravity="bottom|end"
+                android:gravity="center|end"
                 android:textSize="24sp"
-                tools:text="sdgsdgsd"/>
+                tools:text="test1"/>
         </TableRow>
 
         <TableRow
@@ -43,10 +43,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#005F5555"
-                android:gravity="bottom|end"
+                android:gravity="center|end"
                 android:scrollbars="horizontal"
                 android:textSize="24sp"
-                tools:text="sdgdsgsd"/>
+                tools:text="test2"/>
         </TableRow>
 
     </TableLayout>
