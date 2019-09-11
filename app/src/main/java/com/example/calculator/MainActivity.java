@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private Integer counterCloseBracket;
     private Integer bracketCounter;
 
-
     private Button number0;
     private Button number1;
     private Button number2;
@@ -195,6 +194,9 @@ public class MainActivity extends AppCompatActivity {
                     scoreboard.setText(str);
                     result.setText(str);
                     isMathSignUse = false;
+                    Toast toastCleaning = Toast.makeText(getApplicationContext(),
+                            "Поле очищено!", Toast.LENGTH_SHORT);
+                    toastCleaning.show();
                     break;
                 case R.id.buttonOpenBracket:
                     str = scoreboard.getText().toString();
@@ -207,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.buttonRoot:
                     str = scoreboard.getText().toString();
-                        scoreboard.setText(str + "√(");
+                    scoreboard.setText(str + "√(");
                     break;
                 case R.id.buttonSquare:
                     str = scoreboard.getText().toString();
@@ -217,13 +219,13 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.buttonExponent:
                     str = scoreboard.getText().toString();
-                    if (isMathSignUse == true)  scoreboard.setText(str + "^");
+                    if (isMathSignUse == true) scoreboard.setText(str + "^");
                     isMathSignUse = false;
                     isPointUse = true;
                     break;
                 case R.id.buttonDivision:
                     str = scoreboard.getText().toString();
-                    if (isMathSignUse == true)  scoreboard.setText(str + "/");
+                    if (isMathSignUse == true) scoreboard.setText(str + "/");
                     isMathSignUse = false;
                     isPointUse = true;
                     break;
@@ -241,26 +243,26 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.buttonMultiplication:
                     str = scoreboard.getText().toString();
-                    if (isMathSignUse == true)  scoreboard.setText(str + "*");
+                    if (isMathSignUse == true) scoreboard.setText(str + "*");
                     isMathSignUse = false;
                     isPointUse = true;
                     break;
                 case R.id.buttonSubtraction:
                     str = scoreboard.getText().toString();
-                    if (isMathSignUse == true)  scoreboard.setText(str + "-");
+                    if (isMathSignUse == true) scoreboard.setText(str + "-");
                     isMathSignUse = false;
                     isPointUse = true;
                     break;
                 case R.id.buttonSummation:
                     str = scoreboard.getText().toString();
-                    if (isMathSignUse == true)  scoreboard.setText(str + "+");
+                    if (isMathSignUse == true) scoreboard.setText(str + "+");
                     isMathSignUse = false;
                     isPointUse = true;
                     break;
                 case R.id.numberPower:
                     str = scoreboard.getText().toString();
 
-                    if( isPointUse == true ) {
+                    if (isPointUse == true) {
                         scoreboard.setText(str + ".");
                         isMathSignUse = false;
                     }
@@ -270,43 +272,28 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.buttonCalculation:
                     str = scoreboard.getText().toString();
 
-
-
-// indexOf !!!!!!!!!!!
                     counterOpenBracket = countChar(str, '(');
                     counterCloseBracket = countChar(str, ')');
                     bracketCounter = counterOpenBracket - counterCloseBracket;
-//                    System.out.println("Запятых тут : " + (counterOpenBracketArray.length - 1) + " штук.");
 
 
-
-
-                    System.out.println("----------------------------");
-                    System.out.println("откртыо : " + counterOpenBracket + " штук.");
-                    System.out.println("закрыто : " + counterCloseBracket + " штук.");
-
-                    if ( bracketCounter > 0){
+                    if (str.contains("()")) {
                         Toast toast = Toast.makeText(getApplicationContext(),
-                                "Закройте "+ (counterOpenBracket - counterCloseBracket) + " скобки !",
+                                "Уберите «()» !", Toast.LENGTH_SHORT);
+                        toast.show();
+                    } else if (bracketCounter > 0) {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Закройте " + (counterOpenBracket - counterCloseBracket) + " скобки !",
                                 Toast.LENGTH_SHORT);
                         toast.show();
-                    } else if ( bracketCounter < 0){
+                    } else if (bracketCounter < 0) {
                         Toast toast = Toast.makeText(getApplicationContext(),
-                                "Закрыто больше скобок, чем открыто на " + ( counterCloseBracket - counterOpenBracket)+" скобки!",
+                                "Закрыто больше скобок, чем открыто на " + (counterCloseBracket - counterOpenBracket) + " скобки!",
                                 Toast.LENGTH_SHORT);
                         toast.show();
                     } else {
-                        String fixBrackets = str.replaceAll("[(|)|cos|sin]", "");
-
-                        if(fixBrackets.length() == 0){
-                            Toast toast = Toast.makeText(getApplicationContext(),
-                                    "Введите числа", Toast.LENGTH_SHORT);
-                            toast.show();
-                        }else {
-                            String  resoldCalculate = dataCalculation.calc(str).toString();
-                            result.setText(resoldCalculate);
-                        }
-
+                        String resoldCalculate = dataCalculation.calc(str).toString();
+                        result.setText(resoldCalculate);
                     }
                     break;
 
