@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
     private Button numberPower;
     private Button buttonCalculation;
 
-
     DataCalculation dataCalculation = new DataCalculation();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -213,8 +213,8 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.buttonSquare:
                     str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "^2");
-                    isMathSignUse = true;
+                    if (isMathSignUse == true) scoreboard.setText(str + "^2");
+                    isMathSignUse = false;
                     isPointUse = true;
                     break;
                 case R.id.buttonExponent:
