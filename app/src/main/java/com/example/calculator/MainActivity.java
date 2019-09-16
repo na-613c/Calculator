@@ -1,11 +1,15 @@
 package com.example.calculator;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.udojava.evalex.Expression;
 
 import java.util.ArrayList;
 
@@ -19,37 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean isMathSignUse = false;
     private boolean isPointUse = true;
+    private boolean isFirstMinus = true;
 
-    private String str;
-    private Integer counterOpenBracket;
-    private Integer counterCloseBracket;
-    private Integer bracketCounter;
-
-    private Button number0;
-    private Button number1;
-    private Button number2;
-    private Button number3;
-    private Button number4;
-    private Button number5;
-    private Button number6;
-    private Button number7;
-    private Button number8;
-    private Button number9;
-    private Button buttonCleaning;
-    private Button buttonDel;
-    private Button buttonOpenBracket;
-    private Button buttonCloseBracket;
-    private Button buttonRoot;
-    private Button buttonSquare;
-    private Button buttonExponent;
-    private Button buttonDivision;
-    private Button buttonSin;
-    private Button buttonCos;
-    private Button buttonMultiplication;
-    private Button buttonSubtraction;
-    private Button buttonSummation;
-    private Button numberPower;
-    private Button buttonCalculation;
 
     DataCalculation dataCalculation = new DataCalculation();
 
@@ -62,31 +37,31 @@ public class MainActivity extends AppCompatActivity {
         result = findViewById(R.id.result);
         result.setText("");
 
-        number0 = findViewById(R.id.number0);
-        number1 = findViewById(R.id.number1);
-        number2 = findViewById(R.id.number2);
-        number3 = findViewById(R.id.number3);
-        number4 = findViewById(R.id.number4);
-        number5 = findViewById(R.id.number5);
-        number6 = findViewById(R.id.number6);
-        number7 = findViewById(R.id.number7);
-        number8 = findViewById(R.id.number8);
-        number9 = findViewById(R.id.number9);
-        buttonCleaning = findViewById(R.id.buttonCleaning);
-        buttonDel = findViewById(R.id.buttonDel);
-        buttonOpenBracket = findViewById(R.id.buttonOpenBracket);
-        buttonCloseBracket = findViewById(R.id.buttonCloseBracket);
-        buttonRoot = findViewById(R.id.buttonRoot);
-        buttonSquare = findViewById(R.id.buttonSquare);
-        buttonExponent = findViewById(R.id.buttonExponent);
-        buttonDivision = findViewById(R.id.buttonDivision);
-        buttonSin = findViewById(R.id.buttonSin);
-        buttonCos = findViewById(R.id.buttonCos);
-        buttonMultiplication = findViewById(R.id.buttonMultiplication);
-        buttonSubtraction = findViewById(R.id.buttonSubtraction);
-        buttonSummation = findViewById(R.id.buttonSummation);
-        numberPower = findViewById(R.id.numberPower);
-        buttonCalculation = findViewById(R.id.buttonCalculation);
+        Button number0 = findViewById(R.id.number0);
+        Button number1 = findViewById(R.id.number1);
+        Button number2 = findViewById(R.id.number2);
+        Button number3 = findViewById(R.id.number3);
+        Button number4 = findViewById(R.id.number4);
+        Button number5 = findViewById(R.id.number5);
+        Button number6 = findViewById(R.id.number6);
+        Button number7 = findViewById(R.id.number7);
+        Button number8 = findViewById(R.id.number8);
+        Button number9 = findViewById(R.id.number9);
+        Button buttonCleaning = findViewById(R.id.buttonCleaning);
+        Button buttonDel = findViewById(R.id.buttonDel);
+        Button buttonOpenBracket = findViewById(R.id.buttonOpenBracket);
+        Button buttonCloseBracket = findViewById(R.id.buttonCloseBracket);
+        Button buttonRoot = findViewById(R.id.buttonRoot);
+        Button buttonSquare = findViewById(R.id.buttonSquare);
+        Button buttonExponent = findViewById(R.id.buttonExponent);
+        Button buttonDivision = findViewById(R.id.buttonDivision);
+        Button buttonSin = findViewById(R.id.buttonSin);
+        Button buttonCos = findViewById(R.id.buttonCos);
+        Button buttonMultiplication = findViewById(R.id.buttonMultiplication);
+        Button buttonSubtraction = findViewById(R.id.buttonSubtraction);
+        Button buttonSummation = findViewById(R.id.buttonSummation);
+        Button numberPower = findViewById(R.id.numberPower);
+        Button buttonCalculation = findViewById(R.id.buttonCalculation);
 
 
         allBtn.add(number0);
@@ -116,14 +91,22 @@ public class MainActivity extends AppCompatActivity {
         allBtn.add(buttonCalculation);
 
 
-        for(int i = 0; i < allBtn.size() ; i++ ){
-            allBtn.get(i).setOnClickListener(new View.OnClickListener() {
+//        for(int i = 0; i < allBtn.size() ; i++ ){
+//            allBtn.get(i).setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    onMyButtonClick(v);
+//                }
+//            });
+//        }
+
+        for(Button i: allBtn){
+            i.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     onMyButtonClick(v);
                 }
             });
-
         }
 
 
@@ -134,184 +117,166 @@ public class MainActivity extends AppCompatActivity {
 
             switch (view.getId()) {
                 case R.id.number0:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "0");
+                    String inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + "0");
                     isMathSignUse = true;
                     break;
                 case R.id.number1:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "1");
+                    inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + "1");
                     isMathSignUse = true;
                     break;
                 case R.id.number2:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "2");
+                    inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + "2");
                     isMathSignUse = true;
                     break;
                 case R.id.number3:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "3");
+                    inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + "3");
                     isMathSignUse = true;
                     break;
                 case R.id.number4:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "4");
+                    inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + "4");
                     isMathSignUse = true;
                     break;
                 case R.id.number5:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "5");
+                    inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + "5");
                     isMathSignUse = true;
                     break;
                 case R.id.number6:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "6");
+                    inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + "6");
                     isMathSignUse = true;
                     break;
                 case R.id.number7:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "7");
+                    inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + "7");
                     isMathSignUse = true;
                     break;
                 case R.id.number8:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "8");
+                    inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + "8");
                     isMathSignUse = true;
                     break;
                 case R.id.number9:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "9");
+                    inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + "9");
                     isMathSignUse = true;
                     break;
                 case R.id.buttonDel:
-                    str = scoreboard.getText().toString();
-                    if (str.length() != 0) str = str.substring(0, str.length() - 1);
-                    scoreboard.setText(str);
+                    inputString = scoreboard.getText().toString();
+                    if (inputString.length() != 0) inputString = inputString.substring(0, inputString.length() - 1);
+                    scoreboard.setText(inputString);
                     isMathSignUse = true;
                     break;
                 case R.id.buttonCleaning:
-                    str = "";
-                    scoreboard.setText(str);
-                    result.setText(str);
+                    inputString = "";
+                    scoreboard.setText(inputString);
+                    result.setText(inputString);
                     isMathSignUse = false;
                     Toast toastCleaning = Toast.makeText(getApplicationContext(),
                             "Поле очищено!", Toast.LENGTH_SHORT);
                     toastCleaning.show();
                     break;
                 case R.id.buttonOpenBracket:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "(");
+                    inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + "(");
                     isMathSignUse = false;
                     break;
                 case R.id.buttonCloseBracket:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + ")");
+                    inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + ")");
                     break;
                 case R.id.buttonRoot:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "√(");
+                    inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + "√(");
                     break;
                 case R.id.buttonSquare:
-                    str = scoreboard.getText().toString();
-                    if (isMathSignUse == true) scoreboard.setText(str + "^2");
+                    inputString = scoreboard.getText().toString();
+                    if (isMathSignUse == true) scoreboard.setText(inputString + "^2");
                     isMathSignUse = false;
                     isPointUse = true;
                     break;
                 case R.id.buttonExponent:
-                    str = scoreboard.getText().toString();
-                    if (isMathSignUse == true) scoreboard.setText(str + "^");
+                    inputString = scoreboard.getText().toString();
+                    if (isMathSignUse == true) scoreboard.setText(inputString + "^");
                     isMathSignUse = false;
                     isPointUse = true;
                     break;
                 case R.id.buttonDivision:
-                    str = scoreboard.getText().toString();
-                    if (isMathSignUse == true) scoreboard.setText(str + "/");
+                    inputString = scoreboard.getText().toString();
+                    if (isMathSignUse == true) scoreboard.setText(inputString + "/");
                     isMathSignUse = false;
                     isPointUse = true;
                     break;
                 case R.id.buttonSin:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "sin(");
+                    inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + "sin(");
                     isMathSignUse = false;
                     isPointUse = true;
                     break;
                 case R.id.buttonCos:
-                    str = scoreboard.getText().toString();
-                    scoreboard.setText(str + "cos(");
+                    inputString = scoreboard.getText().toString();
+                    scoreboard.setText(inputString + "cos(");
                     isMathSignUse = false;
                     isPointUse = true;
                     break;
                 case R.id.buttonMultiplication:
-                    str = scoreboard.getText().toString();
-                    if (isMathSignUse == true) scoreboard.setText(str + "*");
+                    inputString = scoreboard.getText().toString();
+                    if (isMathSignUse == true) scoreboard.setText(inputString + "*");
                     isMathSignUse = false;
                     isPointUse = true;
                     break;
                 case R.id.buttonSubtraction:
-                    str = scoreboard.getText().toString();
-                    if (isMathSignUse == true) scoreboard.setText(str + "-");
+                    inputString = scoreboard.getText().toString();
+                    if (isMathSignUse == true) scoreboard.setText(inputString + "-");
+                    if (isFirstMinus == true) {scoreboard.setText(inputString + "-"); isFirstMinus = false;}
                     isMathSignUse = false;
                     isPointUse = true;
                     break;
                 case R.id.buttonSummation:
-                    str = scoreboard.getText().toString();
-                    if (isMathSignUse == true) scoreboard.setText(str + "+");
+                    inputString = scoreboard.getText().toString();
+                    if (isMathSignUse == true) scoreboard.setText(inputString + "+");
                     isMathSignUse = false;
                     isPointUse = true;
                     break;
                 case R.id.numberPower:
-                    str = scoreboard.getText().toString();
+                    inputString = scoreboard.getText().toString();
 
                     if (isPointUse == true) {
-                        scoreboard.setText(str + ".");
+                        scoreboard.setText(inputString + ".");
                         isMathSignUse = false;
                     }
 
                     isPointUse = false;
                     break;
                 case R.id.buttonCalculation:
-                    str = scoreboard.getText().toString();
-
-                    counterOpenBracket = countChar(str, '(');
-                    counterCloseBracket = countChar(str, ')');
-                    bracketCounter = counterOpenBracket - counterCloseBracket;
 
 
-                    if (str.contains("()")) {
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "Уберите «()» !", Toast.LENGTH_SHORT);
-                        toast.show();
-                    } else if (bracketCounter > 0) {
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "Закройте " + (counterOpenBracket - counterCloseBracket) + " скобки !",
-                                Toast.LENGTH_SHORT);
-                        toast.show();
-                    } else if (bracketCounter < 0) {
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "Закрыто больше скобок, чем открыто на " + (counterCloseBracket - counterOpenBracket) + " скобки!",
-                                Toast.LENGTH_SHORT);
-                        toast.show();
-                    } else {
-                        String resoldCalculate = dataCalculation.calc(str).toString();
-                        result.setText(resoldCalculate);
-                    }
+                    inputString = scoreboard.getText().toString();
+
+                        String resoldCalculate;
+                        try {
+                            resoldCalculate = dataCalculation.calc(inputString).toString();
+                            result.setText(resoldCalculate);
+                        } catch (Expression.ExpressionException | ArithmeticException error){
+
+                            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                            builder.setTitle("Error!")
+                                    .setMessage(error.getMessage())
+                                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            dialog.cancel();
+                                        }
+                                    });
+                            AlertDialog alert = builder.create();
+                            alert.show();
+
+                        }
                     break;
-
             }
-
     }
-
-    public int countChar(String str, char c)
-    {
-        int count = 0;
-
-        for(int i=0; i < str.length(); i++)
-        {
-            if(str.charAt(i) == c) count++;
-        }
-
-        return count;
-    }
-
-
 }
