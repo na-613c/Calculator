@@ -30,6 +30,8 @@
                 android:background="#005F5555"
                 android:gravity="center|end"
                 android:textSize="30sp"
+                android:maxLines="1"
+                android:inputType="text"
                 tools:text="test1"
                 android:freezesText="true"/>
         </TableRow>
@@ -48,7 +50,7 @@
                 android:gravity="center|end"
                 android:scrollbars="horizontal"
                 android:textColor="#FF0000"
-                android:textSize="60sp"
+                android:textSize="50sp"
                 tools:text="test2"
                 android:freezesText="true"/>
         </TableRow>
@@ -98,23 +100,27 @@
                 android:textSize="24dp"
                 android:layout_marginStart="2dp" />
 
+
+
+
+
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonSquare"
+                android:id="@+id/buttonDivision"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:text=" x^2 "
                 android:background="#33000000"
+                android:text=" / "
                 android:textSize="24dp"
                 android:layout_marginStart="2dp" />
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonExponent"
+                android:id="@+id/buttonCleaning"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:text="^"
-                android:background="#33000000"
+                android:background="#FF5722"
+                android:text="С"
                 android:textSize="24dp"
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"/>
@@ -157,22 +163,22 @@
                 android:layout_marginStart="2dp" />
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonDivision"
+                android:id="@+id/buttonMultiplication"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_weight="1"
+                android:text=" * "
                 android:background="#33000000"
-                android:text=" / "
                 android:textSize="24dp"
                 android:layout_marginStart="2dp" />
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonSin"
+                android:id="@+id/buttonDel"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:text="sin"
-                android:background="#33000000"
+                android:background="#FF9800"
+                android:text="del"
                 android:textSize="24dp"
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"/>
@@ -215,21 +221,23 @@
                 android:layout_marginStart="2dp"/>
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonMultiplication"
+                android:id="@+id/buttonSubtraction"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:text=" * "
+                android:text=" - "
                 android:background="#33000000"
                 android:textSize="24dp"
                 android:layout_marginStart="2dp" />
 
+
+
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonCos"
+                android:id="@+id/buttonSin"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:text="cos"
+                android:text="sin"
                 android:background="#33000000"
                 android:textSize="24dp"
                 android:layout_marginStart="2dp"
@@ -273,25 +281,27 @@
                 android:layout_marginStart="2dp" />
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonSubtraction"
+                android:id="@+id/buttonSummation"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:text=" - "
+                android:text=" + "
                 android:background="#33000000"
                 android:textSize="24dp"
                 android:layout_marginStart="2dp" />
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonDel"
+                android:id="@+id/buttonCos"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:background="#FF9800"
-                android:text="del"
+                android:text="cos"
+                android:background="#33000000"
                 android:textSize="24dp"
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"/>
+
+
         </TableRow>
 
         <TableRow
@@ -322,6 +332,29 @@
                 android:layout_marginStart="2dp" />
 
             <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonSquare"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:text=" x^2 "
+                android:background="#33000000"
+                android:textSize="24dp"
+                android:layout_marginStart="2dp" />
+
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonExponent"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:text="^"
+                android:background="#33000000"
+                android:textSize="24dp"
+                android:layout_marginStart="2dp" />
+
+
+
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/buttonCalculation"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
@@ -330,28 +363,10 @@
                 android:text="="
                 android:textSize="24dp"
                 android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
                 android:textStyle="bold"/>
 
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonSummation"
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:text=" + "
-                android:background="#33000000"
-                android:textSize="24dp"
-                android:layout_marginStart="2dp" />
 
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonCleaning"
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:background="#FF5722"
-                android:text="С"
-                android:textSize="24dp"
-                android:layout_marginStart="2dp"
-                android:layout_marginEnd="2dp"/>
         </TableRow>
 
     </TableLayout>

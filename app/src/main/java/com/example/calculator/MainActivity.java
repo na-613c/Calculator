@@ -258,10 +258,18 @@ public class MainActivity extends AppCompatActivity {
 
                     inputString = scoreboard.getText().toString();
 
-                        String resoldCalculate;
+                    Integer counterOpenBracket = countChar(inputString, '(');
+                    Integer counterCloseBracket = countChar(inputString, ')');
+
+                    for (;counterOpenBracket > counterCloseBracket; counterCloseBracket++){
+                        inputString += ")";
+                        scoreboard.setText(inputString);
+                    }
+
+                        String resultCalculate;
                         try {
-                            resoldCalculate = dataCalculation.calc(inputString).toString();
-                            result.setText(resoldCalculate);
+                            resultCalculate = dataCalculation.calc(inputString).toString();
+                            result.setText(resultCalculate);
                         } catch (Expression.ExpressionException | ArithmeticException error){
 
                             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -279,4 +287,19 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
     }
+
+
+
+    public int countChar(String str, char c)
+    {
+        int count = 0;
+
+        for(int i=0; i < str.length(); i++)
+        {
+            if(str.charAt(i) == c) count++;
+        }
+
+        return count;
+    }
+
 }

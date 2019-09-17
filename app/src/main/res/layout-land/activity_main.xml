@@ -31,6 +31,8 @@
                 android:gravity="center|end"
                 android:textSize="20sp"
                 tools:text="test1"
+                android:maxLines="1"
+                android:inputType="text"
                 android:freezesText="true"/>
         </TableRow>
 
@@ -136,15 +138,16 @@
                 android:textSize="15dp" />
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonSin"
+                android:id="@+id/buttonCleaning"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="sin"
-                android:background="#33000000"
+                android:background="#FF5722"
+                android:text="С"
                 android:textSize="15dp"
                 android:layout_marginStart="1dp"
                 android:layout_marginEnd="1dp"/>
+
         </TableRow>
 
         <TableRow
@@ -204,15 +207,17 @@
                 android:layout_marginStart="1dp"/>
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonCos"
+                android:id="@+id/buttonDel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="cos"
-                android:background="#33000000"
+                android:background="#FF9800"
+                android:text="del"
                 android:textSize="15dp"
                 android:layout_marginStart="1dp"
                 android:layout_marginEnd="1dp"/>
+
+
         </TableRow>
 
         <TableRow
@@ -271,16 +276,19 @@
                 android:textSize="15dp"
                 android:layout_marginStart="1dp" />
 
+
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonDel"
+                android:id="@+id/numberPower"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#FF9800"
-                android:text="del"
+                android:text="."
+                android:background="#33000000"
                 android:textSize="15dp"
                 android:layout_marginStart="1dp"
-                android:layout_marginEnd="1dp"/>
+                android:layout_marginEnd="1dp" />
+
+
         </TableRow>
 
         <TableRow
@@ -301,25 +309,24 @@
                 android:layout_marginStart="1dp"/>
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/numberPower"
+                android:id="@+id/buttonSin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="."
+                android:text="sin"
                 android:background="#33000000"
                 android:textSize="15dp"
                 android:layout_marginStart="1dp" />
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonCalculation"
+                android:id="@+id/buttonCos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#BF0051FC"
-                android:text="="
+                android:text="cos"
+                android:background="#33000000"
                 android:textSize="15dp"
-                android:layout_marginStart="1dp"
-                android:textStyle="bold" />
+                android:layout_marginStart="1dp" />
 
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/buttonSummation"
@@ -339,19 +346,19 @@
                 android:text="^"
                 android:background="#33000000"
                 android:textSize="15dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginEnd="1dp"/>
+                android:layout_marginStart="1dp" />
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/buttonCleaning"
+                android:id="@+id/buttonCalculation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#FF5722"
-                android:text="С"
+                android:background="#BF0051FC"
+                android:text="="
                 android:textSize="15dp"
                 android:layout_marginStart="1dp"
-                android:layout_marginEnd="1dp"/>
+                android:layout_marginEnd="1dp"
+                android:textStyle="bold" />
         </TableRow>
 
 
