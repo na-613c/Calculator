@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonCalculation = findViewById(R.id.buttonCalculation);
 
 
+
         allBtn.add(number0);
         allBtn.add(number1);
         allBtn.add(number2);
@@ -114,10 +115,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onMyButtonClick(View view){
+        String inputString;
 
             switch (view.getId()) {
                 case R.id.number0:
-                    String inputString = scoreboard.getText().toString();
+                    inputString = scoreboard.getText().toString();
                     scoreboard.setText(inputString + "0");
                     isMathSignUse = true;
                     break;
